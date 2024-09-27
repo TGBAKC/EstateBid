@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Create Listing | EstateBid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/">EstateBid</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <!-- Common links -->
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Listings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Search</a>
+          </li>
+          <!-- Links for registered users -->
+          <li class="nav-item dropdown" id="userMenu" style="display: none">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> User </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#" id="viewCredit">View Credit</a></li>
+              <li><a class="dropdown-item" href="#" id="updateAvatar">Update Avatar</a></li>
+              <li><a class="dropdown-item" href="#" id="createListing">Create Listing</a></li>
+              <li><a class="dropdown-item" href="#" id="viewBids">View Bids</a></li>
+              <li><a class="dropdown-item" href="#" id="logout">Logout</a></li>
+            </ul>
+          </li>
+          <!-- Links for unregistered users -->
+          <li class="nav-item" id="loginMenu" style="display: none">
+            <a class="nav-link" href="src/Auth/login.html" id="login">Login</a>
+          </li>
+          <li class="nav-item" id="registerMenu" style="display: none">
+            <a class="nav-link" href="register.html" id="register">Register</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <h1>Create New Listing</h1>
+      <form id="create-listing-form">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="Enter listing title" />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="form-control" id="description" name="description" rows="4" placeholder="Enter listing description"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="tags">Tags</label>
+          <input type="text" class="form-control" id="tags" name="tags" placeholder="Enter relevant tags" />
+        </div>
+        <div class="form-group">
+          <label for="media">Media</label>
+          <div id="media-inputs">
+            <input type="url" class="form-control mb-2" name="media0" placeholder="Enter image URL" />
+          </div>
+          <button type="button" id="add-media-url-button" class="btn btn-outline-primary">Add another image</button>
+        </div>
+        <div class="form-group">
+          <label for="endsAt">Auction Ends</label>
+          <input type="datetime-local" class="form-control" id="endsAt" name="endsAt" />
+        </div>
+        <button type="submit" class="btn btn-primary">Create Listing</button>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

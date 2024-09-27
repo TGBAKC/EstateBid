@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>User Profile</title>
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">EstateBid</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Listings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Create Auction</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <div class="container mt-5">
+      <div class="row">
+        <!-- Profile Sidebar -->
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body text-center">
+              <!-- Avatar -->
+              <img src="/Images/avatar.png" alt="User Avatar" class="img-fluid rounded-circle mb-3" style="width: 150px;">
+              <h4>John Doe</h4>
+              <!-- Update Avatar Button -->
+              <button class="btn btn-primary btn-block mt-3" id="updateAvatarButton">Update Avatar</button>
+            </div>
+          </div>
+          <!-- Personal Details -->
+          <div class="card mt-4">
+            <div class="card-body">
+              <h5 class="card-title">Personal Details</h5>
+              <form>
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" id="username" value="JohnDoe123" readonly>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" value="john.doe@example.com" readonly>
+                </div>
+                <div class="form-group mt-3">
+                  <label for="credit">Credit</label>
+                  <input type="number" class="form-control" id="credit" value="1500" readonly>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-8">
+          <!-- My Listings -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">My Listings</h5>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Listing Title</th>
+                      <th>Current Bid</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Luxury House</td>
+                      <td>$200,000</td>
+                      <td>Active</td>
+                      <td><a href="#" class="btn btn-info btn-sm">View</a></td>
+                    </tr>
+                    <tr>
+                      <td>Modern Apartment</td>
+                      <td>$150,000</td>
+                      <td>Closed</td>
+                      <td><a href="#" class="btn btn-info btn-sm">View</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Winning Bids -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Winning Bids</h5>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Auction Title</th>
+                      <th>Winning Bid</th>
+                      <th>Date Won</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Luxury Yacht</td>
+                      <td>$1,000,000</td>
+                      <td>2023-09-01</td>
+                      <td><a href="#" class="btn btn-info btn-sm">View</a></td>
+                    </tr>
+                    <tr>
+                      <td>Sports Car</td>
+                      <td>$120,000</td>
+                      <td>2023-08-15</td>
+                      <td><a href="#" class="btn btn-info btn-sm">View</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-4 mt-5">
+      <div class="container text-center">
+        <p class="mb-0">&copy; 2024 EstateBid. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      document.getElementById('updateAvatarButton').addEventListener('click', function() {
+        alert('Update Avatar Clicked');
+        // Avatar update logic here
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    <title>Center Image with Bootstrap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
+    <link href="index.css" rel="stylesheet" />
+    <script>
+      if (!localStorage.getItem("token")) {
+        window.location.href = "/src/Auth/login.html";
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">EstateBid</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile.html">profile</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav me-auto" id="userMenu">
+            <li class="nav-item"><a class="nav-link" href="#" id="viewCredit">View Credit</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="updateAvatar">Update Avatar</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="createListing">Create Listing</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="viewBids">View Bids</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="logout">Logout</a></li>
+          </ul>
+          <form id="searchForm" class="d-flex" role="search" style="max-width: 800px">
+            <input class="form-control me-2" type="search" placeholder="Search for properties" aria-label="Search" style="flex-grow: 1" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Image Container -->
+<!-- Image Container -->
+<div class="container mt-4">
+  <div class="d-flex justify-content-center">
+    <div class="position-relative">
+      <img
+        alt="Estate image"
+        class="img-fluid"
+        src="https://boligpartner-cdn.imgix.net/uploads/boligpartner/1gtfFs3YqsdlAl63X3aTjH5Q3CTl33iqU9Ya0ELE.jpg?w=770&amp;h=auto&amp;fit=crop&amp;crop=focalpoint&amp;fp-debug=0&amp;ar=&amp;fp-x=0.5&amp;fp-y=0.5&amp;fp-z=1&amp;auto=format"
+        loading="lazy"
+      />
+   
+    </div>
+  </div>
+  
+
+</div>
+
+<div class="d-flex justify-content-start position-absolute w-100" style="bottom: 10px; left: 10px;"></div>
+  <a href="./createlisting.html" class="btn btn-primary">New Auction</a>
+</div>
+    <!-- Property Listings -->
+    <div class="container mt-5">
+      <div class="row row-cols-1 row-cols-md-3 g-4"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <!-- Footer Logo and Description -->
+          <div class="col-md-4">
+            <h5 class="text-uppercase">ESTATEBID</h5>
+            <p>We provide high-quality products and services to our customers. Your satisfaction is our priority.</p>
+          </div>
+          <!-- Footer Links -->
+          <div class="col-md-4">
+            <h5 class="text-uppercase">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="/" class="text-white">Home</a></li>
+              <li><a href="#" class="text-white">About Us</a></li>
+              <li><a href="#" class="text-white">Services</a></li>
+              <li><a href="#" class="text-white">Contact</a></li>
+            </ul>
+          </div>
+          <!-- Social Media Icons -->
+          <div class="col-md-4">
+            <h5 class="text-uppercase">Follow Us</h5>
+            <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="bg-secondary text-center py-3">
+        <p class="mb-0">&copy; 2024 EstateBid. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Set the links to be visible or hidden depending on the user state
+      const token = localStorage.getItem("token");
+      console.log("token", token);
+      if (token) {
+        document.getElementById("userMenu").style.display = "flex";
+        document.getElementById("loginMenu").style.display = "none";
+        document.getElementById("registerMenu").style.display = "none";
+      } else {
+        document.getElementById("userMenu").style.display = "none";
+        document.getElementById("loginMenu").style.display = "block";
+        document.getElementById("registerMenu").style.display = "block";
+      }
+    </script>
+
+    <!-- Scripts -->
+    <script type="module" src="/src/js/api/auth/index.js"></script>
+    <script type="module" src="/src/js/api/search.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Create Auction</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">EstateBid</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Listings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Auction Creation Form -->
+    <div class="container mt-5">
+      <h2>Create New Auction</h2>
+      <form id="createAuctionForm" class="mt-4">
+        <div class="mb-3">
+          <label for="auctionTitle" class="form-label">Auction Title</label>
+          <input type="text" class="form-control" id="auctionTitle" placeholder="Enter the title of your auction" required>
+        </div>
+        <div class="mb-3">
+          <label for="auctionDescription" class="form-label">Description</label>
+          <textarea class="form-control" id="auctionDescription" rows="4" placeholder="Enter a detailed description" required></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="startingBid" class="form-label">Starting Bid (in USD)</label>
+          <input type="number" class="form-control" id="startingBid" placeholder="Enter starting bid amount" min="0" required>
+        </div>
+        <div class="mb-3">
+          <label for="auctionEndDate" class="form-label">End Date</label>
+          <input type="date" class="form-control" id="auctionEndDate" required>
+        </div>
+        <div class="mb-3">
+          <label for="categorySelect" class="form-label">Category</label>
+          <select class="form-control" id="categorySelect" required>
+            <option value="">Choose a category</option>
+            <option value="real-estate">Real Estate</option>
+            <option value="cars">Cars</option>
+            <option value="art">Art</option>
+            <option value="electronics">Electronics</option>
+            <option value="furniture">Furniture</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="imageUpload" class="form-label">Upload Auction Image</label>
+          <input class="form-control" type="file" id="imageUpload" accept="image/*" required>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Create Listing</button>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-4 mt-5">
+      <div class="container text-center">
+        <p class="mb-0">&copy; 2024 EstateBid. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      document.getElementById('createAuctionForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Form validation and submission logic goes here
+        alert('Auction Created Successfully!');
+      });
+    </script>
+  </body>
+</html>
