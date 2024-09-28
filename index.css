@@ -1,0 +1,40 @@
+/* Varsayılan değer (desktop ve üstü) */
+.col {
+
+    padding: 20px;
+    margin-top: 10vh;
+}
+
+/* Küçük ekranlar (telefonlar) */
+@media (max-width: 576px) {
+    .col {
+        height: auto;
+        /* İçeriğe göre yükseklik ayarla */
+        margin-top: 5vh;
+        /* Daha küçük bir margin */
+    }
+}
+
+/* Orta ekranlar (tabletler) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .col {
+        height: 80%;
+        /* Tabletlerde yükseklik biraz küçülsün */
+        margin-top: 8vh;
+    }
+}
+
+/* Büyük ekranlar (laptoplar) */
+@media (min-width: 769px) and (max-width: 992px) {
+    .col {
+        height: 90%;
+        /* Daha büyük cihazlar için yükseklik */
+        margin-top: 9vh;
+    }
+}
+img.card-img-top {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+  
+  }
