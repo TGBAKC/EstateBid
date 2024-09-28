@@ -28,16 +28,20 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="/profile.html">profile</a>
             </li>
-          
+          </ul>
+          <ul class="navbar-nav me-auto" id="userMenu">
+   
             <li class="nav-item"><a class="nav-link" href="#" id="logout">Logout</a></li>
           </ul>
-        
+         
         </div>
       </div>
     </nav>
-
     <form id="searchForm" class="d-flex justify-content-center mt-4" role="search" style="max-width: 800px; margin: 0 auto;">
       <input class="form-control me-2" type="search" placeholder="Search for properties" aria-label="Search" style="flex-grow: 1" />
       <button class="btn btn-outline-success" type="submit">Search</button>
@@ -48,12 +52,10 @@
       <a href="./createlisting.html" class="btn btn-primary">New Auction</a>
     </div>
     
-  <!-- Property Listings -->
-<div class="container mt-5">
-  <div class="row row-cols-1 row-cols-md-3 g-2" id="property-listings">
-    <!-- Dinamik içerik buraya eklenecek -->
-  </div>
-</div>
+    <!-- Property Listings -->
+    <div class="container mt-5">
+      <div class="row row-cols-1 row-cols-md-3 g-4"></div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-dark text-white pt-4 mt-5">
@@ -90,6 +92,7 @@
     </footer>
 
     <script>
+      // Set the links to be visible or hidden depending on the user state
       const token = localStorage.getItem("token");
       console.log("token", token);
       if (token) {
