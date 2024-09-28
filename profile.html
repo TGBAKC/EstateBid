@@ -1,13 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
     <title>User Profile</title>
   </head>
   <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
@@ -40,10 +39,25 @@
           <div class="card">
             <div class="card-body text-center">
               <!-- Avatar -->
-              <img src="/Images/avatar.png" alt="User Avatar" class="img-fluid rounded-circle mb-3" style="width: 150px;">
+              <img id="avatar" src="/Images/avatar.png" alt="User Avatar" class="img-fluid rounded-circle mb-3" style="width: 150px" />
               <h4>John Doe</h4>
               <!-- Update Avatar Button -->
               <button class="btn btn-primary btn-block mt-3" id="updateAvatarButton">Update Avatar</button>
+              <input type="file" id="avatarInput" style="display: none" accept="image/*" />
+              <script>
+                document.getElementById("updateAvatarButton").addEventListener("click", function () {
+                  document.getElementById("avatarInput").click();
+                });
+                document.getElementById("avatarInput").addEventListener("change", function () {
+                  const file = this.files[0];
+                  const reader = new FileReader();
+                  reader.onload = function () {
+                    document.querySelector("img").src = reader.result;
+                  };
+                  reader.readAsDataURL(file);
+                  updateProfile();
+                });
+              </script>
             </div>
           </div>
           <!-- Personal Details -->
@@ -53,15 +67,15 @@
               <form>
                 <div class="form-group">
                   <label for="username">Username</label>
-                  <input type="text" class="form-control" id="username" value="JohnDoe123" readonly>
+                  <input type="text" class="form-control" id="username" value="JohnDoe123" readonly />
                 </div>
                 <div class="form-group mt-3">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" value="john.doe@example.com" readonly>
+                  <input type="email" class="form-control" id="email" value="john.doe@example.com" readonly />
                 </div>
                 <div class="form-group mt-3">
                   <label for="credit">Credit</label>
-                  <input type="number" class="form-control" id="credit" value="1500" readonly>
+                  <input type="number" class="form-control" id="credit" value="1500" readonly />
                 </div>
               </form>
             </div>
@@ -150,10 +164,48 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-      document.getElementById('updateAvatarButton').addEventListener('click', function() {
-        alert('Update Avatar Clicked');
-        // Avatar update logic here
-      });
+      const API_Base = "https://api.noroff.dev/api/v1/auction";
+      const API_Key = "469afe69-d51d-4f51-8e40-618b936a4e1a";
+
+      async function updateProfile() {
+        const user = {
+          name: document.getElementById("username").value,
+          avatar: {
+            url: document.getElementById("avatar").value,
+            alt: "",
+          },
+        };
+
+        try {
+          if (!user.name) {
+            throw new Error("Update requires a name");
+          }
+
+          console.log('localStorage.getItem("profile")', localStorage.getItem("profile"));
+
+          const response = await fetch(`${API_Base}/profiles/tugbatugba`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+              "X-Noroff-API-Key": API_Key,
+            },
+            body: JSON.stringify(user),
+          });
+
+          console.log("response", response);
+
+          if (response.ok) {
+            return await response.json();
+          } else {
+            const errorResponse = await response.json();
+            const errorMessage = errorResponse.errors[0].message;
+            throw new Error(errorMessage);
+          }
+        } catch (error) {
+          throw error;
+        }
+      }
     </script>
   </body>
 </html>
