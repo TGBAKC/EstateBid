@@ -1,5 +1,4 @@
 # Estatebid
-# BidBliss
 
 ![image](/images/semester.png)
 
