@@ -37,8 +37,7 @@ Upon registering, users are given 1000 credits to use on the page.
 1. Clone the repo:
 
 ```bash
-git clone git@github.com:jonhenrikaavitsland/bid-bliss.git
-```
+git clone https://github.com/TGBAKC/EstateBid.git
 
 2. Install the dependencies:
 
