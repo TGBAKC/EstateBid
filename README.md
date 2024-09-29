@@ -30,7 +30,7 @@ Upon registering, users are given 1000 credits to use on the page.
 
 - Design, styleguide and prototype was created in Figma.
   [Design Prototype](https://www.figma.com/design/Yo3btppfrxwhyh76QbaFRe/SP2?node-id=299-1715&m=dev)
-  [Style Guide](https://www.figma.com/design/Yo3btppfrxwhyh76QbaFRe/SP2?node-id=352-3242&m=dev&t=0p6Ju4oO17eI0Dso-1)
+  
 
 ## Hosted Demo:
 
