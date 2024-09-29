@@ -19,25 +19,6 @@ Upon registering, users are given 1000 credits to use on the page.
 - A registered user may add a bid to another user's listing.
 - A registered user may view bid's made on a listing.
 
-## Project planning:
-
-- Uses Trello for Kanban project board.
-- Uses Notion for Gantt chart.
-  [Kanban Project Board](https://trello.com/b/3fgG4N5l/estatebid)
-  [Gantt Chart](https://boom-product-603.notion.site/570d36266954441c91671c628158ca61?v=a39ab7e5cd884c36890833a8a17f2651)
-
-## Design:
-
-- Design, styleguide and prototype was created in Figma.
-  [Design Prototype](https://www.figma.com/design/Yo3btppfrxwhyh76QbaFRe/SP2?node-id=299-1715&m=dev)
-  
-
-## Hosted Demo:
-
-- Hosted at Netlify.
-  [EstateBid](https://66f861aeaf1c2e4e576e5f86--incandescent-shortbread-2acad9.netlify.app/)
-v
-
 
 
 ## The Environment has been configured with:
@@ -77,7 +58,8 @@ npm run dev
 | Resource         | url                                                                                                                                                                                                                                                                                                                                                                                                |
 | :--------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Gantt Chart      | [Gantt Chart Link](https://trello.com/b/3fgG4N5l/estatebid/timeline)                                                                                                                                                                                                                                                                                                                           |
-| Design Prototype | [Dekstop]https://www.figma.com/proto/ov2PduXLM6MiW704PWWzWm/Estatebid?node-id=1-19&node-type=canvas&t=aeC1a2mYbiMfIZOk-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A19 [Mobile](https://www.figma.com/proto/RS7CVhGlAadej70o01S6h4/Untitled?node-id=1-2&node-type=frame&t=9gqa66cKUIYyoVlA-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2) |                                                                                                                                                                                                 |
+| Design Prototype | [Dekstop]https://www.figma.com/proto/ov2PduXLM6MiW704PWWzWm/Estatebid?node-id=1-19&node-type=canvas&t=aeC1a2mYbiMfIZOk-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A19 
+[Mobile](https://www.figma.com/proto/RS7CVhGlAadej70o01S6h4/Untitled?node-id=1-2&node-type=frame&t=9gqa66cKUIYyoVlA-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2) |                                                                                                                                                                                                 |
 | Kanban Board     | [Kanban Board Link](https://trello.com/b/3fgG4N5l/estatebid)                                                                                                                                                                                                                                                                          |
 | Repository       | [Github Link](https://github.com/TGBAKC/EstateBid.git)                                                                                                                                                                                                                                                                                                                                      |
 | Hosted Demo      | [Netlify](https://66f9aff7f362fc55eb9723c8--voluble-palmier-237d76.netlify.app/)                                                                                                                                                                                                                                                                                                                                                |
