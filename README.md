@@ -37,8 +37,7 @@ Upon registering, users are given 1000 credits to use on the page.
 
 - Hosted at Netlify.
   [EstateBid](https://66f861aeaf1c2e4e576e5f86--incandescent-shortbread-2acad9.netlify.app/)
- 
-## Reflections on my planning:
+v
 
 
 

@@ -1,6 +1,6 @@
 const API_Base = "https://v2.api.noroff.dev";
 const API_Listings = "/auction/listings";
-const API_Key = "469afe69-d51d-4f51-8e40-618b936a4e1a";
+const API_Key = '469afe69-d51d-4f51-8e40-618b936a4e1a';
 
 const params = new URLSearchParams(window.location.search);
 const title = params.get("title");
